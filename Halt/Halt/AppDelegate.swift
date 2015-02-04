@@ -53,6 +53,12 @@ class AppDelegate: NSObject, NSApplicationDelegate
         }
     }
     
+    func applicationDidResignActive(aNotification: NSNotification)
+    {
+       let statusItemView = statusItemViewController.view as StatusItemView
+       statusItemView.unHighlight()
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification)
     {
         // Setup the app's status view menu item

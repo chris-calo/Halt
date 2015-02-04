@@ -78,8 +78,8 @@ class StatusItemView: NSView
     checkDarkMode()
     
     // Listen for global notifier(s)
-    NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: Selector("checkDarkMode"), name: "AppleInterfaceThemeChangedNotification", object:nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("flickerIfApplicable"), name: "flickerStatusItemIfApplicable", object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("unHighlight"), name: "NSApplicationDidResignKeyNotification", object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("unHighlight"), name: "NSApplicationDidResignMainNotification", object: nil)
   }
   
   override func drawRect(aRect: NSRect)
