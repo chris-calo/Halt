@@ -42,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         if sender.isHighlighted
         {
+            NSApp!.activateIgnoringOtherApps(true)
             keyboardDisabled = true
             sender.toolTip = statusItemAltToolTip
         }
